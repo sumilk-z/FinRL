@@ -19,20 +19,20 @@ Step 1: Install `Anaconda <https://www.anaconda.com/products/individual>`_
 
 .. code-block:: bash
    
-   /Users/your_user_name/anaconda3/bin/python
+   /Users/your_user_name/opt/anaconda3/bin/python
    
 It means that your Python interpreter path has been pinned to Anaconda’s python version. If it shows something like this:
 
 .. code-block:: bash
    
-   /Users/your_user_name/anaconda3/bin/python
+   /Users/your_user_name/opt/anaconda3/bin/python
 
 It means that you still use the default python path, you either fix it and pin it to the anaconda path (`try this blog <https://towardsdatascience.com/how-to-successfully-install-anaconda-on-a-mac-and-actually-get-it-to-work-53ce18025f97>`_), or you can use Anaconda Navigator to open a terminal manually.
 
 Step 2: Install `Homebrew <https://brew.sh/>`_
 ---------------------------------------------------------------------
 
--Open a terminal and make sure that you have Anaconda.
+-Open a terminal and make sure that you have installed Anaconda.
 
 -Install Homebrew:
 
@@ -74,8 +74,87 @@ or download it manually
 Open Jupyter Notebook through Anaconda Navigator and locate one of the stock trading notebook in FinRL/tutorials you just downloaded. You should be able to run it.
 
 
+Ubuntu
+=======
+
+Step 1: Install `Anaconda <https://www.anaconda.com/products/individual>`_
+----------------------------------------------------------------------------
+
+Please follow the steps in this `blog <https://linuxize.com/post/how-to-install-anaconda-on-ubuntu-18-04/>`_
+
+Step 2: Install `OpenAI <https://github.com/openai/baselines>`_
+----------------------------------------------------------------
+
+Open an ubuntu terminal and type:
+
+.. code-block:: bash
+
+   sudo apt-get update && sudo apt-get install cmake libopenmpi-dev python3-dev zlib1g-dev libgl1-mesa-glx
+   
+Step 3: Install `FinRL <https://github.com/AI4Finance-Foundation/FinRL>`_
+--------------------------------------------------------------------------
+
+Since we are still actively updating the FinRL repository, please install the unstable development version of FinRL using pip:
+
+.. code-block:: bash
+
+   pip install git+https://github.com/AI4Finance-Foundation/FinRL.git
+
+Step 4: Run `FinRL <https://github.com/AI4Finance-Foundation/FinRL>`_
+--------------------------------------------------------------------------
+
+Download the FinRL repository in terminal:
+
+.. code-block:: bash
+
+   git clone https://github.com/AI4Finance-Foundation/FinRL.git
+
+Open Jupyter Notebook by typing 'jupyter notebook' in your ubuntu terminal.
+
+Locate one of the stock trading notebook in FinRL/tutorials you just downloaded. You should be able to run it.
+
 Windows 10
-==========
+======================
+Prepare for install
+--------------------------------------------------------------------------
+1. VPN is needed if using YahooFinance in china (pyfolio, elegantRL pip dependencies need pull code, YahooFinance has stopped the service in china). Othewise, please ignore it. 
+2. python version >=3.7
+3. pip remove zipline, if your system has installed zipline, zipline has conflicts with the FinRL.
+
+Step1: Clone `FinRL <https://github.com/AI4Finance-Foundation/FinRL>`_
+--------------------------------------------------------------------------
+.. code-block:: bash
+
+   git clone https://github.com/AI4Finance-Foundation/FinRL.git
+
+Step2: install dependencies
+--------------------------------------------------------------------------
+.. code-block:: bash
+
+    cd FinRL
+    pip install .
+
+Step3:  test (If using YahooFinance in China, VPN is needed)
+-------------------------------------------------------------------------------------
+.. code-block:: bash
+
+    python FinRL_StockTrading_NeurIPS_2018.py
+
+Tips for running error
+--------------------------------------------------------------------------
+
+If the following outputs appear, take it easy, since installation is still successful.
+
+1. UserWarning: Module "zipline.assets" not found; multipliers will not be applied to position notionals. Module "zipline.assets" not found; multipliers will not be applied'
+
+
+If following outputs appear, please ensure that VPN helps to access the YahooFinance
+
+1. Failed download: xxxx: No data found for this date range, the stock may be delisted, or the value is missing.
+
+
+Windows 10 (wsl install)
+=========================
 
 Step 1: Install Ubuntu on Windows 10
 --------------------------------------
@@ -98,7 +177,7 @@ Open an ubuntu terminal and type:
 .. code-block:: bash
 
    sudo apt-get update && sudo apt-get install cmake libopenmpi-dev python3-dev zlib1g-dev libgl1-mesa-glx
-   
+
 Step 4: Install `FinRL <https://github.com/AI4Finance-Foundation/FinRL>`_
 --------------------------------------------------------------------------
 
@@ -111,15 +190,16 @@ Since we are still actively updating the FinRL repository, please install the un
 Step 5: Run `FinRL <https://github.com/AI4Finance-Foundation/FinRL>`_
 --------------------------------------------------------------------------
 
-Download the FinRL repository using terminal:
+Download the FinRL repository in terminal:
 
 .. code-block:: bash
 
    git clone https://github.com/AI4Finance-Foundation/FinRL.git
 
-Open Jupyter Notebook by typing 'jupyter notebook' in your ubuntu terminal.
+Open Jupyter Notebook by typing 'jupyter notebook' in your ubuntu terminal. Please see `jupyter notebook <https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/execute.html>`_
 
 Locate one of the stock trading notebook in FinRL/tutorials you just downloaded. You should be able to run it.
 
-Ubuntu
-=======
+
+
+

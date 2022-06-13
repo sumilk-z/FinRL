@@ -1,18 +1,20 @@
-:github_url: https://github.com/AI4Finance-LLC/FinRL-Library
+:github_url: https://github.com/AI4Finance-Foundation/FinRL
 
-File Structure
-============================
+=================
+File Architecture
+=================
+
+FinRL's file architecture strictly follow the :ref:`three-layer architecture`.
 
 .. code:: bash
-    
+
     FinRL
-    ├── finrl (main folder)
+    ├── finrl (the main folder)
     │   ├── applications
     │   	├── cryptocurrency_trading
     │   	├── high_frequency_trading
     │   	├── portfolio_allocation
-    │   	├── stock_trading
-    │   	└── config.py
+    │   	└── stock_trading
     │   ├── agents
     │   	├── elegantrl
     │   	├── rllib
@@ -31,14 +33,4 @@ File Structure
     │   ├── train.py
     │   ├── test.py
     │   ├── trade.py
-    │   └── plot.py
-    ├── tutorial (tutorial notebooks and educational files)
-    ├── unit_testing (make sure verified codes working on env & data)
-    │   ├── test_env
-    │   	└── test_env_cashpenalty.py
-    │   └── test_marketdata
-    │   	└── test_yahoodownload.py
-    ├── setup.cfg
-    ├── setup.py
-    ├── requirements.txt
-    └── README.md
+    └───└── plot.py
